@@ -20,7 +20,12 @@ const Entry = mongoose.model('Entry', entrySchema);
 
 // Health Check Endpoint
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'ok', message: 'Server is healthy' });
+    res.status(200).json({
+        status: 'ok',
+        message: 'Server is healthy',
+        dbState: mongoose.connection.readyState,
+        mongoUriDefined: !!process.env.MONGO_URI
+    });
 });
 
 // GET Endpoint to fetch all data
