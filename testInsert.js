@@ -15,7 +15,7 @@ const payload = {
 async function testInsert() {
     try {
         console.log('Sending data to POST /data...');
-        const response = await fetch('http://localhost:3001/data', {
+        const response = await fetch('https://india-mart-vh24.onrender.com/data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
